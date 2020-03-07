@@ -17,11 +17,12 @@ public class Recipe {
     private String source;
     private String url;
     private String directions;
-    //todo add
-    //private Difficulty difficulty;
 
     @Lob
     private Byte[] image;
+
+    @Enumerated(value = EnumType.STRING)
+    private Difficulty difficulty;
 
     @OneToOne(cascade = CascadeType.ALL)
     private Notes notes;
@@ -107,5 +108,21 @@ public class Recipe {
 
     public void setNotes(Notes notes) {
         this.notes = notes;
+    }
+
+    public Difficulty getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(Difficulty difficulty) {
+        this.difficulty = difficulty;
+    }
+
+    public Set<Ingredient> getIngredient() {
+        return ingredient;
+    }
+
+    public void setIngredient(Set<Ingredient> ingredient) {
+        this.ingredient = ingredient;
     }
 }
