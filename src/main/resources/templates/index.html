@@ -13,6 +13,7 @@
 
 </head>
 <body>
+    <!--/*@thymesVar id="recipe" type="java.util.List"*/-->
     <!--/*@thymesVar id="recipe" type="com.neimerc.spring5recipeapp.domain.Recipe"*/-->
     <div class="container-fluid" style="margin-top: 20px">
         <div class="justify-content-center">
@@ -45,7 +46,7 @@
                                 <tr th:each="recipe : ${recipes}">
                                     <td th:text="${recipe.id}">334</td>
                                     <td th:text="${recipe.description}">Tasty Goodnees 3</td>
-                                    <td><a href="#" th:href="@{'/recipe/show/' + ${recipe.id}}">View</a></td>
+                                    <td><a href="#" th:href="@{'/recipe/' + ${recipe.id} + '/show/'}">View</a></td>
                                 </tr>
                             </table>
                         </div>
